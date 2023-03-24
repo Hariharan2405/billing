@@ -1,0 +1,61 @@
+<!DocType html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="description" content="">
+		<meta name="keywords" content="HTML,CSS,JavaScript">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Bill Payment</title>
+		<link href="css/style.css" rel="stylesheet">
+	
+	
+	</head>
+	
+	<body>
+		<section>
+			<div class="d1">
+				<label for="b1" class="a1">Bill amount :</label>
+				<input type="text" id="b1" class="c1" value=""><br><br>
+						
+				<label for="b2" class="a2">Tips in % :</label>
+				<input type="text" id="b2" class="c2" value=""><br><br>
+						
+				<label for="b3" class="a3">Tips in Rs. :</label>
+				<input type="text" id="b3" value="" class="c3" disabled><br><br>
+						
+				<label for="b4" class="a4">Total :</label>
+				<input type="text" id="b4" value="" class="c4" disabled><br><br>
+						
+				<button id="st">Enter</button>	
+			</div>
+			
+			<div id="d2">
+				<p id="b5"></p>
+			</div>
+			
+		
+		</section>
+			
+	
+	
+		<script>
+			let but=document.getElementById("st");
+			but.addEventListener("click",bill);
+			function bill(){
+				var a=document.getElementById("b1").value;
+				var b=document.getElementById("b2").value;
+				var c=a*(b/100);
+				document.getElementById("b3").value=c;
+				var d=parseInt(a)+c;
+				document.getElementById("b4").value=d;
+				
+				var x=document.getElementById("b5");
+				var y="Your Total Bill Payment is Rs. "+d;
+				x.innerText=y;
+			}
+			
+			
+			
+		</script>
+	</body>
+</html>
